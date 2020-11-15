@@ -1,9 +1,9 @@
 ---
-title: 基于Hexo搭建静态博客系统
-categories: "博客系统"
+title: 基于阿里云Oss部署自己的静态博客系统
+categories: "教程类"
 tags:
-	- oss
-	- node
+- 博客系统
+- 阿里云Oss
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
