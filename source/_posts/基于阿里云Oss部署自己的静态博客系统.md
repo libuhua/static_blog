@@ -5,38 +5,77 @@ tags:
 - 博客系统
 - 阿里云Oss
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+相关资源
 
-## Quick Start
+- Node.js
+- 已备案域名
+- 阿里云Oss
+- Hexo静态博客系统
+- git
 
-### Create a new post
+### Hexo静态博客系统
 
-``` bash
-$ hexo new "My New Post"
-```
+#### [Node安装](https://www.runoob.com/nodejs/nodejs-install-setup.html)
 
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
 
 ``` bash
-$ hexo generate
+# 使用cnpm淘宝镜像进行加速
+npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
+#### Hexo安装
 ``` bash
-$ hexo deploy
+# 安装Hexo
+cnpm install -g hexo-cli
+# 创建项目
+pwd # 显示当前路径
+/Users/apple/Desktop/code
+hexo init blog
+cd blog
+cnpm install
+# 发布项目
+hexo generate
+cd public # 此目录为最终生成的博客静态页面的目录
+```
+#### 启动博客服务
+``` bash
+# 安装http服务
+cnpm install -g http-server
+cd public
+http-server
+----
+Starting up http-server, serving ./
+Available on:
+  http://127.0.0.1:8080
+  http://192.168.76.252:8080
+Hit CTRL-C to stop the server
+----
 ```
 
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+#### [Hexo配置文件说明](https://hexo.io/zh-cn/docs/configuration)
+
+#### [使用自定义域名设置静态网站托管](https://help.aliyun.com/document_detail/67323.html?spm=a2c4g.11186623.6.727.3801300eqvf77G)
+
+
+#### 打包并启动服务脚本
+``` bash
+#/bin/bash
+hexo clean
+hexo generate
+cd public
+# cnpm install -g http-server
+http-server
+```
+
+#### 自动发布当前public下文件到阿里云oss脚本
+``` bash
+cnpm install dotenv # 安装包
+cnpm install ali-oss # 安装包
+touch .env # 新建env配置
+---------------.env内容----------------------
+AliyunOssBucket=libuhua-blog
+AliyunOssRegion=oss-cn-beijing
+AliyunOssAccessKeyId=LTAI4G3a8LZb5xuakEfJBq8z
+AliyunOssAccessKeySecret=32l9RMR4HhLS1Uh9w8LLFKMELlYGMt
+--------------------------------------------
+node publish.js # 发布文件到oss
+```
