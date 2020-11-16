@@ -72,10 +72,10 @@ cnpm install dotenv # 安装包
 cnpm install ali-oss # 安装包
 touch .env # 新建env配置
 ---------------.env内容----------------------
-AliyunOssBucket=libuhua-blog
-AliyunOssRegion=oss-cn-beijing
-AliyunOssAccessKeyId=LTAI4G3a8LZb5xuakEfJBq8z
-AliyunOssAccessKeySecret=32l9RMR4HhLS1Uh9w8LLFKMELlYGMt
+AliyunOssBucket=
+AliyunOssRegion=
+AliyunOssAccessKeyId=
+AliyunOssAccessKeySecret=
 --------------------------------------------
 node publish.js # 发布文件到oss
 ```
